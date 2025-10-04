@@ -1,0 +1,22 @@
+{
+  "name": "take-home-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErickHdzV/mercado-libre-automation.git"
+  },
+  "keywords": [],
+  "author": "Erick Hernández Velazco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ErickHdzV/mercado-libre-automation/issues"
+  },
+  "homepage": "https://github.com/ErickHdzV/mercado-libre-automation#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.6.2"
+  }
+}

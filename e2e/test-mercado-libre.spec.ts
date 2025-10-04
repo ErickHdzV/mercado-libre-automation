@@ -25,7 +25,7 @@ const TEXTS = {
   SEARCH_TERM: "Playstation 5",
   COUNTRY: "México",
   SORTED_BY: "Menor precio",
-  // Popup buttons
+  // Popup buttons - used for cleaning the screen for screenshots
   LATER_BUTTON: "Más tarde",
   COOKIES: "Aceptar cookies",
 } as const;
@@ -50,7 +50,7 @@ async function visitMexicoSite(page: Page): Promise<void> {
   // Select México as a country
   await page.getByRole("link", { name: TEXTS.COUNTRY }).click();
 
-  // Clean the screen for the screenshots closing popups if they appear
+  // Clean the screen for screenshots by closing popups if they appear
   // If the popups do not appear, the test continues without issues
   await Promise.allSettled([
     page
@@ -148,7 +148,7 @@ async function extractProductData(
   }
 
   const titleCount = await titleLocator.count();
-  // price is optional value in Mercado Libre
+  // Price is an optional value in Mercado Libre
   const priceCount = priceLocator ? await priceLocator.count() : 0;
 
   // Optional log. Get the counts for the number of items found
@@ -216,7 +216,7 @@ test("Playstation search and sort in Mercado Libre", async ({ page }) => {
   await applyFiltersAndSort(page);
 
   // Extract and log product data
-  // Optional you can pass maxProducts as second argument, default is 5
+  // Optionally you can pass maxProducts as second argument, default is 5
   const products = await extractProductData(page);
   logProducts(products);
 });
